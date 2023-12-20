@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -20,5 +21,9 @@ public class UserService {
 
     public List<User> GetUsers(){
         return userRepository.findAll();
+    }
+
+    public void addUser(User user){
+        userRepository.save(user);
     }
 }
