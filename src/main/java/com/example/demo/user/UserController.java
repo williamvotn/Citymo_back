@@ -1,10 +1,9 @@
 package com.example.demo.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
 
 @RestController
@@ -19,8 +18,18 @@ public class UserController {
     }
 
     @GetMapping
-    public List<User> GetUsers(){
-        return userService.GetUsers();
+    public List<User> getUsers(){
+        return userService.getUsers();
+    }
+
+    @GetMapping("/getById/{id}")
+    public ResponseEntity<User> getUser(@PathVariable Long id) {
+        User user = userService.getUser(id);
+        if (user != null) {
+            return ResponseEntity.ok(user);
+        } else {
+            return ResponseEntity.notFound().build();
+        }
     }
 
     @PostMapping

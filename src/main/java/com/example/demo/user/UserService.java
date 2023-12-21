@@ -1,13 +1,9 @@
 package com.example.demo.user;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class UserService {
@@ -19,8 +15,13 @@ public class UserService {
         this.userRepository= userRepository;
     }
 
-    public List<User> GetUsers(){
+    public List<User> getUsers(){
         return userRepository.findAll();
+    }
+
+    public User getUser(Long id) {
+        return userRepository.findById(id)
+                .orElse(null); // You can customize this part based on your requirements
     }
 
     public void addUser(User user){
