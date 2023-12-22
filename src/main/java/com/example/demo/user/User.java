@@ -10,62 +10,62 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "")
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "email")
-    private String Email;
+    private String email;
 
     @Column(name = "password")
-    private String Password;
+    private String password;
 
     @Column(name = "name")
-    private String Name;
+    private String name;
 
     @Column(name = "firstname")
-    private String Firstname;
+    private String firstname;
 
     @Column(name = "phone")
-    private String Phone;
+    private String phone;
 
     @Column(name = "address")
-    private String Address;
+    private String address;
 
     @Column(name = "zip_code")
-    private String ZIP_Code;
+    private String zipCode;
 
     @Column(name = "birthdate")
-    private LocalDate Birthdate;
+    private LocalDate birthdate;
 
     @Column(name = "inscription_date")
-    private LocalDate Inscription_Date;
+    private LocalDate inscriptionDate;
 
     public User() {
     }
 
-    public User(Long id, String email, String password, String name, String firstname, String phone, String address, String ZIP_Code, LocalDate birthdate) {
+    public User(Long id, String email, String password, String name, String firstname, String phone, String address, String zipCode, LocalDate birthdate) {
         this.id = id;
-        Email = email;
-        Password = password;
-        Name = name;
-        Firstname = firstname;
-        Phone = phone;
-        Address = address;
-        this.ZIP_Code = ZIP_Code;
-        Birthdate = birthdate;
-        Inscription_Date = LocalDate.now();
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.firstname = firstname;
+        this.phone = phone;
+        this.address = address;
+        this.zipCode = zipCode;
+        this.birthdate = birthdate;
+        inscriptionDate = LocalDate.now();
     }
 
-    public User(String email, String password, String name, String firstname, String phone, String address, String ZIP_Code, LocalDate birthdate) {
-        Email = email;
-        Password = password;
-        Name = name;
-        Firstname = firstname;
-        Phone = phone;
-        Address = address;
-        this.ZIP_Code = ZIP_Code;
-        Birthdate = birthdate;
-        Inscription_Date = LocalDate.now();
+    public User(String email, String password, String name, String firstname, String phone, String address, String zipCode, LocalDate birthdate) {
+        this.email = email;
+        this.password = password;
+        this.name = name;
+        this.firstname = firstname;
+        this.phone = phone;
+        this.address = address;
+        this.zipCode = zipCode;
+        this.birthdate = birthdate;
+        inscriptionDate = LocalDate.now();
     }
 
     public Long getId() {
@@ -73,39 +73,39 @@ public class User {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public String getPassword() {
-        return Password;
+        return password;
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public String getFirstname() {
-        return Firstname;
+        return firstname;
     }
 
     public String getPhone() {
-        return Phone;
+        return phone;
     }
 
     public String getAddress() {
-        return Address;
+        return address;
     }
 
-    public String getZIP_Code() {
-        return ZIP_Code;
+    public String getZipCode() {
+        return zipCode;
     }
 
     public LocalDate getBirthdate() {
-        return Birthdate;
+        return birthdate;
     }
 
-    public LocalDate getInscription_Date() {
-        return Inscription_Date;
+    public LocalDate getInscriptionDate() {
+        return inscriptionDate;
     }
 
     public void setId(Long id) {
@@ -113,54 +113,54 @@ public class User {
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public void setPassword(String password) {
-        Password = password;
+        this.password = password;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public void setFirstname(String firstname) {
-        Firstname = firstname;
+        this.firstname = firstname;
     }
 
     public void setPhone(String phone) {
-        Phone = phone;
+        this.phone = phone;
     }
 
     public void setAddress(String address) {
-        Address = address;
+        this.address = address;
     }
 
-    public void setZIP_Code(String ZIP_Code) {
-        this.ZIP_Code = ZIP_Code;
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 
     public void setBirthdate(LocalDate birthdate) {
-        Birthdate = birthdate;
+        this.birthdate = birthdate;
     }
 
-    public void setInscription_Date(LocalDate inscription_Date) {
-        Inscription_Date = inscription_Date;
+    public void setInscriptionDate(LocalDate inscriptionDate) {
+        this.inscriptionDate = inscriptionDate;
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", Email='" + Email + '\'' +
-                ", Password='" + Password + '\'' +
-                ", Name='" + Name + '\'' +
-                ", Firstname='" + Firstname + '\'' +
-                ", Phone='" + Phone + '\'' +
-                ", Address='" + Address + '\'' +
-                ", ZIP_Code='" + ZIP_Code + '\'' +
-                ", Birthdate=" + Birthdate +
-                ", Inscription_Date=" + Inscription_Date +
+                ", Email='" + email + '\'' +
+                ", Password='" + password + '\'' +
+                ", Name='" + name + '\'' +
+                ", Firstname='" + firstname + '\'' +
+                ", Phone='" + phone + '\'' +
+                ", Address='" + address + '\'' +
+                ", ZIP_Code='" + zipCode + '\'' +
+                ", Birthdate=" + birthdate +
+                ", Inscription_Date=" + inscriptionDate +
                 '}';
     }
 }
